@@ -16,7 +16,7 @@ store_data = open('db.json', 'w')
 driver = webdriver.Chrome(options=chrome_options)
 
 
-for i in range(17):
+for i in range(2):
    urlOne = 'https://shopee.vn/search?keyword=s%C3%B4%20c%C3%B4%20la&page='+str(i)
    driver.get(urlOne)
    time.sleep(2)
