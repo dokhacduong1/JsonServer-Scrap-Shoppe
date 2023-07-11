@@ -90,7 +90,7 @@ driver = webdriver.Chrome(options=chrome_options)
 
 
 
-for i in range(2):
+for i in range(1):
    urlOne = 'https://shopee.vn/search?keyword=s%C3%B4%20c%C3%B4%20la&page='+str(i)
    driver.get(urlOne)
   
