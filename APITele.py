@@ -84,6 +84,7 @@ import time
 dataShoppe = []
 chrome_options = Options()
 chrome_options.add_argument("--user-data-dir=C:/Users/Admin/AppData/Local/Google/Chrome/User Data/Profile 1")
+
 store_data = open('db.json', 'w')
 driver = webdriver.Chrome(options=chrome_options)
 
@@ -92,7 +93,7 @@ driver = webdriver.Chrome(options=chrome_options)
 for i in range(17):
    urlOne = 'https://shopee.vn/search?keyword=s%C3%B4%20c%C3%B4%20la&page='+str(i)
    driver.get(urlOne)
-   time.sleep(6)
+   time.sleep(10)
    for request in driver.requests:
       if 'https://shopee.vn/api/v4/search/search_items?by=relevancy' in request.url:     
          response = request.response
