@@ -90,10 +90,10 @@ driver = webdriver.Chrome(options=chrome_options)
 
 
 
-for i in range(17):
+for i in range(2):
    urlOne = 'https://shopee.vn/search?keyword=s%C3%B4%20c%C3%B4%20la&page='+str(i)
    driver.get(urlOne)
-   time.sleep(10)
+   time.sleep(3)
    for request in driver.requests:
       if 'https://shopee.vn/api/v4/search/search_items?by=relevancy' in request.url:     
          response = request.response
@@ -107,6 +107,7 @@ for i in range(17):
             for key in keys_to_removeItemTwo:
                x['item_basic'].pop(key)
             dataShoppe.append(x['item_basic'])
+  
 objNew = {
     "items": dataShoppe
 }
