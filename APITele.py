@@ -16,7 +16,7 @@ store_data = open('db.json', 'w')
 driver = webdriver.Chrome(options=chrome_options)
 
 
-for i in range(2):
+for i in range(17):
    urlOne = 'https://shopee.vn/search?keyword=s%C3%B4%20c%C3%B4%20la&page='+str(i)
    driver.get(urlOne)
    time.sleep(2)
@@ -24,7 +24,7 @@ for i in range(2):
       if 'https://shopee.vn/api/v4/search/search_items?by=relevancy' in request.url:
          if 'limit=60&newest='+str(i*60) in request.url:     
             response = request.response
-            print(request.url)
+            print(i+1)
             body = decode(response.body,response.headers.get('Content-Encoding','Identity'))
             decode_body = body.decode('utf8')
             json_data = json.loads(decode_body)
